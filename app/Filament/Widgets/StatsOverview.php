@@ -6,6 +6,7 @@ use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 use App\Models\Pendapatan;
 use App\Models\Pengeluaran;
+use App\Models\Item;
 use Illuminate\Support\Number;
 
 class StatsOverview extends BaseWidget

@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ItemResource\Pages;
-use App\Filament\Resources\ItemResource\RelationManagers;
-use App\Models\Item;
+use App\Filament\Resources\JajanResource\Pages;
+use App\Filament\Resources\JajanResource\RelationManagers;
+use App\Models\Jajan;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -15,12 +15,12 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Tables\Columns\Summarizers\Summarizer;
 use Illuminate\Support\Facades\DB;
 
-class ItemResource extends Resource
+class JajanResource extends Resource
 {
-    protected static ?string $model = Item::class;
+    protected static ?string $model = Jajan::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationLabel = 'Item Belanja';
+    protected static ?string $navigationLabel = 'Item Jajan';
 
     public static function form(Form $form): Form
     {
@@ -43,7 +43,6 @@ class ItemResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('item')
-                    //->align('right')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('harga')
                     ->numeric()
@@ -96,9 +95,9 @@ class ItemResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListItems::route('/'),
-            //'create' => Pages\CreateItem::route('/create'),
-            //'edit' => Pages\EditItem::route('/{record}/edit'),
+            'index' => Pages\ListJajans::route('/'),
+            //'create' => Pages\CreateJajan::route('/create'),
+            //'edit' => Pages\EditJajan::route('/{record}/edit'),
         ];
     }
 }

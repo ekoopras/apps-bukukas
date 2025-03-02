@@ -14,6 +14,7 @@ class ListItems extends ListRecords
     {
         return [
             Actions\CreateAction::make(),
+            Actions\CreateAction::make(),
         ];
     }
 }
